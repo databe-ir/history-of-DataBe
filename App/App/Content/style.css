@@ -1,0 +1,651 @@
+/*
+ * Shabnam
+================================================================================ */
+
+@font-face {
+    font-family: Shabnam;
+    src: url('fonts/Shabnam/Shabnam.eot');
+    src: url('fonts/Shabnam/Shabnam.eot@#iefix') format('embedded-opentype'), url('fonts/Shabnam/Shabnam.woff') format('woff'), url('fonts/Shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('fonts/Shabnam/Shabnam-Bold.eot');
+    src: url('fonts/Shabnam/Shabnam-Bold.eot@#iefix') format('embedded-opentype'), url('fonts/Shabnam/Shabnam-Bold.woff') format('woff'), url('fonts/Shabnam/Shabnam-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('fonts/Shabnam/Shabnam-Light.eot');
+    src: url('fonts/Shabnam/Shabnam-Light.eot@#iefix') format('embedded-opentype'), url('fonts/Shabnam/Shabnam-Light.woff') format('woff'), url('fonts/Shabnam/Shabnam-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.icon {
+    width: 24px;
+    height: 24px
+}
+
+.left {
+    right: 0;
+    position: fixed;
+    padding: 1em;
+    fill: #fff;
+    top: 0;
+    margin: .4em;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.show {
+    transform: translate3d(0, 0, 0);
+}
+
+.wrapper-text {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
+    color: gray;
+    font-size: 17px;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 700px;
+    outline: 0;
+    padding: 1em 3em 3em;
+    position: relative;
+    top: 0
+}
+
+:after {
+    box-sizing: border-box
+}
+
+:before {
+    box-sizing: border-box
+}
+
+a {
+    text-decoration: none
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background: #eeeded;
+    font-family: Shabnam, Arial, serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    direction: rtl;
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s;
+    outline: 0
+}
+
+    button:hover {
+        background-color: rgba(4, 4, 4, .05)
+    }
+
+    button:active {
+        background-color: rgba(0, 0, 0, .17)
+    }
+
+    button svg {
+        width: 32px;
+        height: 32px;
+        outline: 0
+    }
+
+footer {
+    color: gray;
+    fill: gray;
+    font-size: .8em;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    text-align: center
+}
+
+li {
+    display: inline;
+    padding: 10px
+}
+
+ul {
+    -webkit-padding-start: 0;
+    margin-bottom: 50px
+}
+
+h5 {
+    font-size: 24px
+}
+
+h5 {
+    font-size: 24px
+}
+
+header {
+    backface-visibility: hidden;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    height: 70px;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    transition: .25s transform;
+    width: 100%;
+    z-index: 2;
+    line-height: 70px
+}
+
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background: #eeeded;
+    font-family: Shabnam, Arial, serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0
+}
+
+nav {
+    background: #fff;
+    box-shadow: 0 8px 17px rgba(0, 0, 0, .2);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    transform: translate3d(20em, 0, 0);
+    transition: transform .2s cubic-bezier(.16, .68, .43, .99);
+    z-index: 10;
+    overflow: auto;
+    width: 18.8em;
+}
+
+    nav a {
+        color: gray;
+        display: block;
+        font-size: 1.1em;
+        font-weight: 400;
+        line-height: 3.9em;
+        padding-left: 1.5em;
+        text-decoration: none
+    }
+
+        nav a:hover {
+            background: #fafafa
+        }
+
+section {
+    padding-bottom: 3em;
+    margin-bottom: 10em
+}
+
+.ava {
+    border-radius: 50%;
+    text-align: center;
+    padding: 1em;
+    left: 0;
+    right: 0;
+    margin-left: 4.7em
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 5em;
+    max-width: 1820px;
+    /* overflow-y: hidden; */
+}
+
+@media (max-width:1820px) {
+    main {
+        margin: auto;
+        width: 1510px
+    }
+}
+
+@media (max-width:1510px) {
+    main {
+        width: 1210px
+    }
+}
+
+@media (max-width:1210px) {
+    main {
+        width: 910px
+    }
+}
+
+@media (max-width:910px) {
+    main {
+        width: 610px
+    }
+}
+
+@media (max-width:610px) {
+    main {
+        width: 300px
+    }
+}
+
+.box {
+    animation: flyintotop .4s backwards;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 0;
+    display: inline-block;
+    height: 270px;
+    margin: 11.5px;
+    position: relative;
+    transition: all .2s ease-in-out;
+    width: 270px;
+}
+
+@-webkit-keyframes flyintotop {
+    from {
+        -webkit-transform: translateY(100vh)
+    }
+
+    to {
+        -webkit-transform: translateY(0)
+    }
+}
+
+@keyframes flyintotop {
+    from {
+        transform: translateY(100vh)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+.box:hover {
+    box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19)
+}
+
+.box:nth-child(0) {
+    animation-delay: .74s
+}
+
+.box:nth-child(1) {
+    animation-delay: .37s;
+}
+
+.box:nth-child(2) {
+    animation-delay: .45s
+}
+
+.box:nth-child(3) {
+    animation-delay: .7s
+}
+
+.box:nth-child(4) {
+    animation-delay: .35s
+}
+
+.box:nth-child(5) {
+    animation-delay: .4s
+}
+
+.codepen {
+    background-color: transparent;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32px" viewBox="0 0 64 64"><path stroke="gray" stroke-width="3" stroke-linejoin="round" fill="none" d="M31.6 11.8l-20.3 13.5 20.3 13.8 20.8-13.8zM31.6 24.5l-20.3 13.2 20.3 13.8 20.8-13.8z"/><path stroke="gray" stroke-width="3" d="M31.6 11.8v14.5M31.6 39.1v10.6M11.3 25.3v11.8M52.4 25.3v11.8"/></svg>');
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    bottom: -65px;
+    height: 42px;
+    left: 215px;
+    position: absolute;
+    transition: background-color .2s;
+    width: 42px;
+    z-index: 1
+}
+
+    .codepen:hover {
+        background-color: rgba(4, 4, 4, .05)
+    }
+
+.name {
+    background-color: #fafafa;
+    bottom: 0;
+    color: gray;
+    padding: 1.5em;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%
+}
+
+.pen {
+    height: 12em;
+    margin: 0 auto;
+    position: absolute;
+    width: 17em
+}
+
+main svg {
+    /* cursor: zoom-in; */
+    height: 10em;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    width: 10em;
+}
+
+    main svg:focus {
+        /* background: #fff; */
+        /* box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23); */
+        /* height: 100%; */
+        /* margin: 0 auto; */
+        /* max-height: 50em; */
+        /* max-width: 50em; */
+        /* outline: 0; */
+        /* outline-color: rgba(244, 244, 244, .93); */
+        /* outline-style: solid; */
+        /* outline-width: 100em; */
+        /* padding: 5em; */
+        /* pointer-events: none; */
+        /* position: fixed; */
+        /* top: 5em; */
+        /* width: 100%; */
+        /* z-index: 7; */
+    }
+
+.blue {
+    background-color: #2196f3
+}
+
+.deep-orange {
+    background-color: #ff5722
+}
+
+.green {
+    background-color: #4caf50
+}
+
+.icon-drawer {
+    display: inline-block;
+    height: 31.9px;
+    margin-right: 1em;
+    padding: .03em;
+    position: relative;
+    top: .5em;
+    width: 31.9px;
+    width: 2.3em
+}
+
+.intro {
+    padding: 5em;
+    z-index: 2;
+    text-align: center;
+    position: relative
+}
+
+.logo {
+    color: #fff;
+    cursor: default;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 3;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.orange {
+    background-color: #ff9800
+}
+
+.pink {
+    background-color: #e91e63
+}
+
+.purple {
+    background-color: #673ab7
+}
+
+.close,
+.open,
+input {
+    height: 70px;
+    top: 0;
+    width: 70px;
+    fill: gray;
+    background: 0 0;
+    position: inherit;
+    z-index: 11;
+    transition: all .2s ease-in-out;
+    left: 0;
+    padding: 23px;
+}
+
+.close {
+    display: none;
+    cursor: pointer
+}
+
+.open {
+    fill: #fff
+}
+
+header input {
+    border: none;
+    cursor: pointer;
+    outline: 0;
+    z-index: 12
+}
+
+    header input:focus {
+        cursor: auto;
+        width: 100%;
+        color: gray;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        padding-left: 70px;
+        z-index: 10;
+        background: #fff
+    }
+
+        header input:focus ~ .open {
+            left: 0;
+            fill: gray
+        }
+
+        header input:focus ~ .close {
+            display: block
+        }
+
+nav a svg {
+    display: inline-block;
+    height: 2em;
+    margin-right: 1em;
+    padding: .1em;
+    position: relative;
+    top: .6em;
+    width: 2em;
+    background: 0 0
+}
+
+nav svg {
+    background: #F4F4F4;
+    opacity: 1;
+    border: none
+}
+
+svg {
+    outline: 0
+}
+
+section:not(:target) {
+    display: none
+}
+
+.fabs {
+    bottom: 0;
+    position: fixed;
+    margin: 1.5em;
+    right: 0;
+    z-index: 999
+}
+
+.fab {
+    display: block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin: 20px auto 0;
+    box-shadow: 0 5px 11px -2px rgba(0, 0, 0, .18), 0 4px 12px -7px rgba(0, 0, 0, .15);
+    cursor: pointer;
+    transition: all .1s ease-out;
+    position: relative
+}
+
+    .fab.red {
+        background: #F44336
+    }
+
+    .fab:hover {
+        box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28)
+    }
+
+[tooltip]:before {
+    font-family: sans-serif;
+    font-weight: 600;
+    border-radius: 2px;
+    background-color: #585858;
+    color: #fff;
+    content: attr(tooltip);
+    font-size: 16px;
+    visibility: hidden;
+    opacity: 0;
+    padding: 17px 20px;
+    margin-right: 10px;
+    position: absolute;
+    right: 100%;
+    bottom: 5%;
+    white-space: nowrap;
+    transition: all .3s ease-out
+}
+
+[tooltip]:hover:after,
+[tooltip]:hover:before {
+    visibility: visible;
+    opacity: 1
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(244, 244, 244, .93)
+}
+
+.new-svg {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 5%;
+    padding: 3em;
+    margin: 0 auto;
+    background: #fafafa;
+    width: 800px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, .1) 0 1px 0
+}
+
+.lightbox:target {
+    outline: 0;
+    display: block
+}
+
+* {
+    border: 0;
+    outline: 0
+}
+
+label#largeFile:after {
+    position: absolute;
+    z-index: 99;
+    background: #fafafa;
+    content: "Upload SVG";
+    left: 170px;
+    padding-top: 20%;
+    right: 170px;
+    margin: 40px;
+    top: 25px;
+    bottom: 150px;
+    text-align: center;
+    border-radius: 10px;
+    border: 5px dashed #ccc;
+    color: #ccc;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    transition: all .2s ease-in-out
+}
+
+label#largeFile:hover:after {
+    background: #ccc;
+    color: #fff;
+    cursor: pointer
+}
+
+label#largeFile input#file {
+    width: 0;
+    height: 0
+}
+
+.step {
+    position: absolute;
+    color: #fff;
+    background: #0f9d58;
+    width: 190px;
+    height: 50px;
+    bottom: 50px;
+    padding: 10px;
+    border-radius: 1px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 10;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1)
+}
+
+    .step:hover {
+        background: #0e8f50
+    }
+
+.right {
+    right: 0;
+}

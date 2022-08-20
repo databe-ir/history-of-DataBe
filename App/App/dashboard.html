@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>نمای شهر</title>
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="Content/dashboard/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/dashboard/css/all.css">
+    <link rel="stylesheet" href="Content/dashboard/css/c3.min.css">
+    <link red="stylesheet" href="Content/dashboard/css/highcharts.css">
+
+    <link rel="stylesheet" href="Content/dashboard/css/tui-chart.min.css">
+    <link rel="stylesheet" href="Content/dashboard/css/main.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper dashboardWrap">
+        <div class="content-wrapper">
+
+            <div class="content-heading sticky">
+                <div class="mr-auto">
+                    <div class="btn-group">
+                        <div class="content-menuitem menuitem-toggle">
+                            <a href="index.html">
+                                <svg viewBox="0 0 512 512" class="svg-inline--fa fa-sign-in-alt fa-w-16 fa-fw">
+                                    <path fill="#28a745" d="M144 112v51.6H48c-26.5 0-48 21.5-48 48v88.6c0 26.5 21.5 48 48 48h96v51.6c0 42.6 51.7 64.2 81.9 33.9l144-143.9c18.7-18.7 18.7-49.1 0-67.9l-144-144C195.8 48 144 69.3 144 112zm192 144L192 400v-99.7H48v-88.6h144V112l144 144zm80 192h-84c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h84c26.5 0 48-21.5 48-48V160c0-26.5-21.5-48-48-48h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-auto">
+                    <div class="btn-group">
+                        <div class="content-menuitem menuitem-toggle">
+                            <a id="toggleDashboard" title="Click to switch second dashboard">
+                                <em class="fas fa-toggle-off"></em>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main role="main" class="main-dashboard" id="main-dashboard">
+
+                <div class="row">
+                    <div class="col col-lg-4">
+
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-rotate="bar" data-target-id="chart-bar-container" data-chart-type="bar" data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+
+                                <h2 class="card-title">درآمد شهری در سال های 93 تا 96</h2>
+                            </div>
+
+                            <div class="card-body text-center">
+                                <canvas id="chart-bar-container" height="169"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-chart-type="bar" data-lib="c3js" data-target-id="c3-bar-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">تعداد زائران سال های 93 تا 96 در شهر مشهد</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-bar-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="highchartjs" data-chart-type="bar" data-rotate="bar" data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">وقایع چهارگانه حیاتی شهرستان مشهد سال های 93 تا 96</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-bar-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">وضعیت اشتغال در شهر مشهد</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-donut-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">وضعیت عرصه شهرستان مشهد</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-pie-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">جمعیت نواحی به تفکیک</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-area-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-8">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="highchartjs" data-chart-type="column" data-rotate="column" data-lib="chartjs" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">مدیریت شهری</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-column-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">گردش مالی شهرداری</h2>
+
+                                <div class="card-body text-center">
+                                    <canvas id="chart-doughnut-container" height="169"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-4">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">اصناف در شهر</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-pie-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-8">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Rotate Chart" data-lib="c3js" data-chart-type="line" data-target-id="c3-line-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <h2 class="card-title">حمل و نقل شهری</h2>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-line-container" style="height: 260px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col col-lg-12" style="display:none;">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+                                <div class="card-title">کسب کار ها در منطق 13 گانه</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="hc-bubble-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-12">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right rotate-chart" title="Roate Chart" data-lib="c3js" data-chart-type="bubble" data-target-id="c3-bubble-container" data-rotate="false" data-tool="Rotate charts" data-toggle="tooltip">
+                                    <i class="fas fa-redo"></i>
+                                </a>
+
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+
+                                <div class="card-title">شرایط کلی آب و هوایی</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="c3-bubble-container" style="height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-12" style="display:none;">
+                        <div class="card card-default ">
+                            <div class="card-header">
+                                <a class="float-right togglechart" title="Zoom In" data-tool="zoom-in" data-toggle="tooltip">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </a>
+                                <a class="float-right" title="View Source" data-tool="view-source" data-toggle="tooltip">
+                                    <em class="fa fa-eye"></em>
+                                </a>
+                                <div class="card-title">امید به زندگی در مناطق 13 گانه شهرستان مشهد</div>
+                            </div>
+                            <div class="card-body text-center">
+                                <!-- <div id="chart-bubble-container" style="height: 260px;"></div> -->
+                                <canvas id="chart-bubble-container" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <main role="main" class="second-dashboard" id="second-dashboard" style="display:none">
+            </main>
+
+        </div>
+        <footer class="footer">
+            <div class="container text-center">
+                <span class="text-muted">2020, VIZ.DATA</span>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <div class="modal fade" id="zoomPopup" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="zoomTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="zoombody" style="height: 500px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Content/dashboard/js/jquery-3.3.1.min.js" type='text/javascript'></script>
+    <script src="Content/dashboard/js/popper.min.js"></script>
+    <script src="Content/dashboard/js/bootstrap.min.js"></script>
+
+    <!--Chart.js-->
+    <script src="Content/dashboard/js/Chart.min.js"></script>
+    <!--c3.js-->
+    <script src="Content/dashboard/js/d3.min.js"></script>
+    <script src="Content/dashboard/js/c3.min.js"></script>
+    <!--highchart.js-->
+
+    <script src="Content/dashboard/js/highcharts.js"></script>
+    <!-- This refernce file used for bubble chart-->
+    <script src="Content/dashboard/js/highcharts-more.js"></script>
+
+    <!--highchart.js-->
+    <script src="Content/dashboard/js/highcharts/bar.js"></script>
+    <script src="Content/dashboard/js/highcharts/pie.js"></script>
+    <script src="Content/dashboard/js/highcharts/column.js"></script>
+    <script src="Content/dashboard/js/highcharts/area.js"></script>
+    <script src="Content/dashboard/js/highcharts/bubble.js"></script>
+    <!--C3.js-->
+    <script src="Content/dashboard/js/c3js/bar.js"></script>
+    <script src="Content/dashboard/js/c3js/line.js"></script>
+    <script src="Content/dashboard/js/c3js/donut.js"></script>
+    <script src="Content/dashboard/js/c3js/pie.js"></script>
+    <script src="Content/dashboard/js/c3js/bubble.js"></script>
+
+    <!--Chart.js-->
+    <script src="Content/dashboard/js/chartjs/bar.js"></script>
+    <script src="Content/dashboard/js/chartjs/doughnut.js"></script>
+    <script src="Content/dashboard/js/chartjs/bubble.js"></script>
+    <!--TuiChart.js-->
+    <!-- <script src="js/tuichart/bar.js"></script> -->
+    <!--vuejs-->
+    <script src="Content/dashboard/js/vue.js"></script>
+
+    <script src="Content/dashboard/js/common.js"></script>
+
+</body>
+
+</html>
